@@ -1,0 +1,13 @@
+version: '3'
+services:
+  chat_app_api:
+    image: chat_app_api
+    container_name: chat_app_api
+    ports:
+      - "8000:8000"
+    networks:
+      - proxy-redirect-net
+
+networks:
+  proxy-redirect-net:
+    driver: bridge

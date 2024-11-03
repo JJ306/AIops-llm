@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-app-deployment
+  labels:
+    app: ai-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ai-app
+  template:
+    metadata:
+      labels:
+        app: ai-app
+    spec:
+      containers:
+      - name: ai-app
+        image: docker.io/30062907/llm-apps-aks-demo:{{IMAGE_TAG}}
+        # image: docker.io/30062907/llm-apps-aks-demo:59eaa5da4a3b246b727a146bbea2ed9500874896
+        ports:
+          - containerPort: 80
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "300M"  
+            cpu: "0.5"     
+          limits:
+            memory: "1Gi" 
+            cpu: "1.5"       
+      imagePullSecrets:
+      - name: docker-image-pull-secret
+  progressDeadlineSeconds: 36000

@@ -1,0 +1,10 @@
+trained_models/
+*.iml
+.vscode/
+terraform_modules/terraform-aks/.terraform
+terraform_modules/terraform-aks/.terraform.lock.hcl
+terraform_modules/terraform-backends
+terraform-aks-test/
+terraform-aks-test/main.tf
+terraform_tfstate_backend/
+azure_bash/
