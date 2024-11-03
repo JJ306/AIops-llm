@@ -1,2 +1,2 @@
-# AIops-llm
+# AIOps-llm
 serve-offline-llm
